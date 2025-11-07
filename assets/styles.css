@@ -1,3 +1,13 @@
+/* 引入 EVA 风格字体 */
+@font-face {
+  font-family: 'EvaTitle';
+  src: url('assets/fonts/eva‑title.woff2') format('woff2'),
+       url('assets/fonts/eva‑title.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 基本样式 */
 * {
   box-sizing: border-box;
@@ -5,93 +15,186 @@
   padding: 0;
 }
 body {
-  font-family: 'Staatliches', sans-serif;  /* 使用 EVA 风格的字体 */
-  background-color: black;
+  font-family: 'EvaTitle', sans-serif; /* 使用 EVA 风格字体 */
+  background-color: #000;
   color: white;
   line-height: 1.6;
 }
 
-/* 标题样式 */
+/* 主标题 */
 h1 {
   text-align: center;
-  font-size: 3rem;
-  margin: 20px 0;
-  color: #ff2a00;  /* EVA 红色 */
-  text-shadow: 2px 2px 5px #fff;
+  font-size: 3.5rem;
+  color: #ff2a00; /* EVA 红色 */
+  text-shadow: 0 0 15px #ff2a00, 0 0 30px #ff2a00;
+  margin: 30px 0;
 }
 
 /* 网格布局 */
 .container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
+/* 主菜单网格布局 */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .module {
-  background-color: #333;
-  border-radius: 12px;
+  background-color: #111;
+  border: 2px solid #ff2a00;
+  border-radius: 8px;
+  height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  transition: transform 0.4s, background-color 0.4s, box-shadow 0.4s;
   position: relative;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s, background-color 0.3s;
+  overflow: hidden;
 }
 
 .module:hover {
-  transform: scale(1.05);
-  background-color: #ff2a00;
+  transform: scale(1.1);
+  background-color: #200000;
+  box-shadow: 0 0 30px #ff2a00;
 }
 
 .module a {
   text-decoration: none;
-  color: white;
-  text-align: center;
 }
 
 .module h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff2a00;
-  letter-spacing: 3px;
-}
-
-/* 网站页脚 */
-.site-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #222;
+  font-size: 2.4rem;
   color: #fff;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  text-shadow: 0 0 10px #ff2a00, 0 0 20px #ff2a00;
+  text-align: center;
+  line-height: 1.2;
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+/* 个人简介部分 */
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px 0;
+  animation: fadeIn 2s ease-in-out;
+}
 
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 10px #ff2a00;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ff2a00;
+  text-shadow: 0 0 10px #ff2a00;
+}
+
+h3, h4 {
+  color: #ff2a00;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+p {
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+/* 文字与卡片特效 */
+.cards {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  margin: 12px;
+  width: 300px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff2a00;
+}
+
+/* 按钮样式 */
+.big-link {
+  padding: 20px 40px;
+  background-color: #ff2a00;
+  color: #111;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.big-link:hover {
+  background-color: #ff1a00;
+  transform: scale(1.05);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 页脚 */
+.site-footer {
+  background-color: #222;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+  }
   .module {
     height: 200px;
   }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
   .module h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
