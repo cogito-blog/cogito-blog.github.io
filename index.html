@@ -1,1 +1,62 @@
-<h1>Cogito, ergo sum.</h1>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>我的个人主页</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">你的名字 / 昵称</h1>
+      <nav class="main-nav">
+        <a href="index.html">主页</a>
+        <a href="travel.html">旅游记录</a>
+        <a href="books.html">书影记录</a>
+        <a href="research.html">科研日志</a>
+        <a href="guestbook.html">留言板</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <img src="https://via.placeholder.com/120" alt="头像" class="avatar">
+      <div>
+        <h2>你好，我是 你的名字</h2>
+        <p>一句话介绍你自己（职业 / 爱好 / 研究方向 / 旅行热情……）。</p>
+        <p>联系：<a href="mailto:you@example.com">you@example.com</a> · <a href="https://github.com/你的用户名">GitHub</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h3>最新日志</h3>
+      <ul class="cards" id="recent-posts">
+        <!-- 可手动写入，或用 JS 从 JSON 加载 -->
+        <li class="card"><a href="research.html#post-1">科研日志：项目 X 的进展</a><p class="meta">2025-05-12</p></li>
+        <li class="card"><a href="travel.html#post-beijing">旅行：北京 3 日游</a><p class="meta">2024-12-01</p></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>快速入口</h3>
+      <div class="links-grid">
+        <a class="big-link" href="travel.html">旅游记录</a>
+        <a class="big-link" href="books.html">书/影 记录</a>
+        <a class="big-link" href="research.html">科研日志</a>
+        <a class="big-link" href="guestbook.html">留言板</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 你的名字 · 基于 GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
+
