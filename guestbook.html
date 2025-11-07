@@ -1,1 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>留言板 — 你的名字</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><a href="index.html">你的名字</a></h1>
+      <nav class="main-nav">
+        <a href="index.html">主页</a>
+        <a href="travel.html">旅游记录</a>
+        <a href="books.html">书影记录</a>
+        <a href="research.html">科研日志</a>
+        <a href="guestbook.html">留言板</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>留言板</h2>
+
+    <p>欢迎留言！下面是使用 Utterances（基于 GitHub issues）的评论区：</p>
+
+    <!-- === Utterances: 在此替换 repo 值为 <你的用户名>/<你的仓库名>（例如 username/username.github.io） === -->
+    <div id="utterances-container"></div>
+    <script src="https://utteranc.es/client.js"
+            repo="你的用户名/你的仓库名"
+            issue-term="pathname"
+            label="guestbook"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+
+    <hr>
+
+    <p>或者使用 Giscus（基于 Discussions）：</p>
+    <!-- Giscus: 需要到 giscus.app 生成脚本并替换 data-repo、data-repo-id、data-category、data-category-id -->
+    <!-- 示例（占位）： -->
+    <!--
+    <script src="https://giscus.app/client.js"
+      data-repo="你的用户名/你的仓库名"
+      data-repo-id="REPO_ID"
+      data-category="General"
+      data-category-id="CATEGORY_ID"
+      data-mapping="pathname"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      crossorigin="anonymous"
+      async>
+    </script>
+    -->
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year-5"></span> 你的名字</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
 
