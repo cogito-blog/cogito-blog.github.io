@@ -129,7 +129,7 @@ body {
   .eva-title { font-size: 2rem; }
 }
 
-/* ---------- EVA 启动动画 ---------- */
+/* ---------- EVA 启动动画增强版 ---------- */
 #eva-startup {
   position: fixed;
   inset: 0;
@@ -139,7 +139,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: fadeOutScreen 2s ease 3.5s forwards;
+  animation: fadeOutScreen 2s ease 4.5s forwards; /* 稍微延长淡出时间 */
 }
 
 .eva-startup-text {
@@ -160,6 +160,17 @@ body {
   animation: lineExpand 2s ease 1s forwards;
 }
 
+/* SYSTEM ONLINE 闪现 */
+.eva-online {
+  color: #00ffb3;
+  font-family: 'EvaTitle', monospace;
+  font-size: 1.4rem;
+  margin-top: 40px;
+  opacity: 0;
+  text-shadow: 0 0 15px #00ffb3, 0 0 25px #00ffb3;
+  animation: onlineFlash 0.8s ease 3.3s forwards;
+}
+
 /* 动画定义 */
 @keyframes blink {
   0% { opacity: 1; }
@@ -168,6 +179,11 @@ body {
 @keyframes lineExpand {
   from { width: 0; opacity: 1; }
   to { width: 80%; opacity: 1; }
+}
+@keyframes onlineFlash {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
 @keyframes fadeOutScreen {
   from { opacity: 1; visibility: visible; }
