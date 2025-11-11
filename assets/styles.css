@@ -1,200 +1,175 @@
-/* 引入 EVA 风格字体 */
 @font-face {
   font-family: 'EvaTitle';
-  src: url('assets/fonts/eva‑title.woff2') format('woff2'),
-       url('assets/fonts/eva‑title.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  src: url('fonts/eva-title.woff2') format('woff2');
   font-display: swap;
 }
 
-/* 基本样式 */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 body {
-  font-family: 'EvaTitle', sans-serif; /* 使用 EVA 风格字体 */
   background-color: #000;
   color: white;
-  line-height: 1.6;
+  font-family: 'EvaTitle', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-/* 主标题 */
-h1 {
+/* ---------- Header ---------- */
+.eva-header {
   text-align: center;
-  font-size: 3.5rem;
-  color: #ff2a00; /* EVA 红色 */
-  text-shadow: 0 0 15px #ff2a00, 0 0 30px #ff2a00;
-  margin: 30px 0;
+  padding: 2rem 0 1rem;
+  border-bottom: 2px solid #ff2a00;
+}
+.eva-title {
+  font-size: 2.8rem;
+  color: #ff2a00;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #ff2a00, 0 0 25px #ff2a00;
 }
 
-/* 网格布局 */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-/* 主菜单网格布局 */
-.grid {
+/* ---------- Grid Layout ---------- */
+.eva-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 22px;
+  padding: 40px;
   width: 90%;
   margin: 0 auto;
 }
 
-.module {
-  background-color: #111;
-  border: 2px solid #ff2a00;
-  border-radius: 8px;
-  height: 260px;
+/* ---------- EVA Block ---------- */
+.eva-block {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.4s, background-color 0.4s, box-shadow 0.4s;
-  position: relative;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-decoration: none;
+  border: 2px solid #ff2a00;
+  border-radius: 8px;
   overflow: hidden;
+  text-align: center;
+  transition: transform 0.5s, box-shadow 0.5s;
+  box-shadow: 0 0 10px rgba(255, 42, 0, 0.25);
 }
 
-.module:hover {
-  transform: scale(1.1);
-  background-color: #200000;
+/* ---------- Overlay ---------- */
+.eva-block .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  transition: background-color 0.5s, backdrop-filter 0.5s;
+}
+
+.eva-block:hover .overlay {
+  background-color: rgba(255, 42, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* Hover glow */
+.eva-block:hover {
+  transform: scale(1.05);
   box-shadow: 0 0 30px #ff2a00;
 }
 
-.module a {
-  text-decoration: none;
+/* Randomized block sizes */
+.travel {
+  grid-column: span 2;
+}
+.research {
+  grid-row: span 2;
+}
+.about {
+  grid-column: span 2;
 }
 
-.module h2 {
-  font-size: 2.4rem;
+/* Text */
+.eva-block h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
   color: #fff;
   text-shadow: 0 0 10px #ff2a00, 0 0 20px #ff2a00;
-  text-align: center;
-  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+.eva-block p {
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem;
+  color: #ffb4a2;
+  letter-spacing: 2px;
 }
 
-/* 个人简介部分 */
-.intro {
+/* ---------- Footer ---------- */
+.eva-footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #ff2a00;
+  color: #ffb4a2;
+  font-size: 0.9rem;
+}
+
+/* ---------- Fade-in Animation ---------- */
+.eva-block {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .eva-grid { grid-template-columns: 1fr; }
+  .eva-title { font-size: 2rem; }
+}
+
+/* ---------- EVA 启动动画 ---------- */
+#eva-startup {
+  position: fixed;
+  inset: 0;
+  background-color: black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  gap: 16px;
-  padding: 40px 0;
-  animation: fadeIn 2s ease-in-out;
+  z-index: 9999;
+  animation: fadeOutScreen 2s ease 3.5s forwards;
 }
 
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 0 10px #ff2a00;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
+.eva-startup-text {
   color: #ff2a00;
-  text-shadow: 0 0 10px #ff2a00;
+  font-family: 'EvaTitle', monospace;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #ff2a00, 0 0 30px #ff2a00;
+  animation: blink 0.6s step-end infinite alternate;
 }
 
-h3, h4 {
-  color: #ff2a00;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
-}
-
-p {
-  color: #bbb;
-  font-size: 1.1rem;
-}
-
-/* 文字与卡片特效 */
-.cards {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 12px 20px;
-  margin: 12px;
-  width: 300px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff2a00;
-}
-
-/* 按钮样式 */
-.big-link {
-  padding: 20px 40px;
+.eva-startup-line {
+  width: 80%;
+  height: 2px;
   background-color: #ff2a00;
-  color: #111;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 30px;
+  opacity: 0;
+  animation: lineExpand 2s ease 1s forwards;
 }
 
-.big-link:hover {
-  background-color: #ff1a00;
-  transform: scale(1.05);
+/* 动画定义 */
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.2; }
 }
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
+@keyframes lineExpand {
+  from { width: 0; opacity: 1; }
+  to { width: 80%; opacity: 1; }
 }
-
-/* 页脚 */
-.site-footer {
-  background-color: #222;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  color: #fff;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-  .module {
-    height: 200px;
-  }
-  .module h2 {
-    font-size: 1.8rem;
-  }
+@keyframes fadeOutScreen {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
 }
