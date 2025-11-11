@@ -1,46 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>卡冈图亚</title>
-  <link rel="stylesheet" href="assets/styles.css">
- <link rel="icon" href="assets/Cat favicon.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>卡图冈亚</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="assets/Cat favicon.png" type="image/png" />
 </head>
+
 <body>
-  <header class="site-header">
-    <h1>卡冈图亚</h1>
+
+  <!-- ✅ EVA 启动动画层 -->
+  <div id="eva-startup">
+    <div class="eva-startup-text">EVA SYSTEM BOOTING...</div>
+    <div class="eva-startup-line"></div>
+  </div>
+
+  <!-- ✅ 主页面内容 -->
+  <header class="eva-header">
+    <h1 class="eva-title">EVA PERSONAL LOG SYSTEM</h1>
   </header>
 
-  <main class="container">
-    <div class="grid">
-      <div class="module travel">
-        <a href="travel.html">
-          <h2>埃德蒙斯</h2>
-        </a>
-      </div>
-      <div class="module books">
-        <a href="books.html">
-          <h2>曼恩</h2>
-        </a>
-      </div>
-      <div class="module research">
-        <a href="research.html">
-          <h2>米勒</h2>
-        </a>
-      </div>
-      <div class="module guestbook">
-        <a href="guestbook.html">
-          <h2>Stay</h2>
-        </a>
-      </div>
-    </div>
+  <main class="eva-grid">
+    <a href="travel.html" class="eva-block travel" style="--bg:url('assets/images/travel.jpg')">
+      <div class="overlay"></div>
+      <h2>TRAVEL LOG</h2>
+      <p>埃德蒙斯</p>
+    </a>
+
+    <a href="books.html" class="eva-block books" style="--bg:url('assets/images/books.jpg')">
+      <div class="overlay"></div>
+      <h2>BOOKS & FILMS</h2>
+      <p>米勒</p>
+    </a>
+
+    <a href="research.html" class="eva-block research" style="--bg:url('assets/images/research.jpg')">
+      <div class="overlay"></div>
+      <h2>RESEARCH NOTES</h2>
+      <p>曼恩</p>
+    </a>
+
+    <a href="guestbook.html" class="eva-block guestbook" style="--bg:url('assets/images/guestbook.jpg')">
+      <div class="overlay"></div>
+      <h2>MESSAGE BOARD</h2>
+      <p>Stay</p>
+    </a>
+
+    <a href="about.html" class="eva-block about" style="--bg:url('assets/images/about.jpg')">
+      <div class="overlay"></div>
+      <h2>ABOUT ZOE</h2>
+      <p>个 人 简 介</p>
+    </a>
   </main>
 
-  <footer class="site-footer">
+  <footer class="eva-footer">
     <p>© 2025 Cogito</p>
   </footer>
-  
-  <script src="assets/script.js"></script>
+
+  <!-- ✅ 启动动画控制脚本 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("eva-startup").style.display = "none";
+      }, 4000); // 4秒后彻底隐藏启动层
+    });
+  </script>
 </body>
 </html>
