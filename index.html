@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-<!-- ✅ EVA 启动动画层 -->
 <div id="eva-startup">
   <div class="eva-startup-text">Absolute Terror Field...</div>
   <div class="eva-startup-line"></div>
@@ -19,12 +17,11 @@
 
 <header class="eva-header">
   <div class="scanline"></div>
-  <p class="eva-kicker">COGITO · PERSONAL NODE</p>
+  <div class="header-grid"></div>
+  <p class="eva-kicker">COGITO · PERSONAL NODE // 02</p>
   <h1 class="eva-title">Gargantua</h1>
-  <p class="eva-intro">
-    在黑白高对比的静默背景中记录阅读、电影、旅行与研究，
-    以低饱和霓虹点缀思考轨迹。
-  </p>
+  <p class="eva-subtitle">PERSONAL PORTAL / NOTES · TRAVEL · RESEARCH</p>
+  <p class="eva-intro">在黑白高对比的静默背景中记录阅读、电影、旅行与研究，以低饱和霓虹点缀思考轨迹。</p>
   <nav class="eva-nav" aria-label="首页快速导航">
     <a href="books.html">Books / Movie</a>
     <a href="travel.html">Travel</a>
@@ -36,33 +33,38 @@
 <main class="eva-grid">
   <a href="travel.html" class="eva-block travel" style="--bg:url('assets/images/bg1.jpg')">
     <div class="overlay"></div>
+    <span class="eva-index">01</span>
     <h2>TRAVEL LOG</h2>
-    <p>埃德蒙斯</p>
+    <p class="eva-note">记录城市、风景与短途逃逸</p>
   </a>
 
-  <a href="books.html" class="eva-block books" style="--bg:url('assets/images/books.jpg')">
+  <a href="books.html" class="eva-block books" style="--bg:url('assets/images/eva-bg1.png')">
     <div class="overlay"></div>
+    <span class="eva-index">02</span>
     <h2>BOOKS & FILMS</h2>
-    <p>米勒</p>
+    <p class="eva-note">书影、片段与私人注释</p>
   </a>
 
   <a href="research.html" class="eva-block research" style="--bg:url('assets/images/eva-bg1.png')">
     <div class="overlay"></div>
+    <span class="eva-index">03</span>
     <h2>RESEARCH NOTES</h2>
-    <p>曼恩</p>
+    <p class="eva-note">材料、显微结构与科研札记</p>
   </a>
 
-  <a href="guestbook.html" class="eva-block guestbook" style="--bg:url('assets/images/guestbook.jpg')">
+  <a href="guestbook.html" class="eva-block guestbook" style="--bg:url('assets/images/bg1.jpg')">
     <div class="overlay"></div>
+    <span class="eva-index">04</span>
     <h2>MESSAGE BOARD</h2>
-    <p>Stay</p>
+    <p class="eva-note">留下碎片、问候或回声</p>
   </a>
 
-  <a href="about.html" class="eva-block about" style="--bg:url('assets/images/about.jpg')">
+  <article class="eva-block about is-static" style="--bg:url('assets/images/eva-bg1.png')" aria-label="ABOUT ZOE（页面建设中）">
     <div class="overlay"></div>
+    <span class="eva-index">05</span>
     <h2>ABOUT ZOE</h2>
-    <p>个 人 简 介</p>
-  </a>
+    <p class="eva-note">关于我、研究与生活侧影</p>
+  </article>
 </main>
 
 <footer class="eva-footer">

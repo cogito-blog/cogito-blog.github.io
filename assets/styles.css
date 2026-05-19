@@ -6,7 +6,6 @@
 
 :root {
   --bg: #050507;
-  --panel: #0e1016;
   --text: #f4f5f8;
   --muted: #b5bccd;
   --neon-blue: #66b6ff;
@@ -19,9 +18,12 @@
 
 body {
   background:
-    radial-gradient(circle at 10% 15%, rgba(102, 182, 255, 0.12), transparent 28%),
-    radial-gradient(circle at 85% 8%, rgba(159, 123, 255, 0.12), transparent 26%),
+    radial-gradient(circle at 10% 15%, rgba(102, 182, 255, 0.11), transparent 30%),
+    radial-gradient(circle at 85% 8%, rgba(159, 123, 255, 0.1), transparent 28%),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
     var(--bg);
+  background-size: auto, auto, 36px 36px, 36px 36px, auto;
   color: var(--text);
   font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   margin: 0;
@@ -31,85 +33,80 @@ body {
 
 .eva-header {
   position: relative;
-  max-width: 1100px;
-  margin: 1.2rem auto 0;
-  padding: 3.2rem 1.2rem 2rem;
+  max-width: 1120px;
+  margin: 1rem auto 0;
+  padding: 2.8rem 1.2rem 1.8rem;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: linear-gradient(150deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-  box-shadow: 0 0 0 1px rgba(102, 182, 255, 0.12), 0 0 28px rgba(102, 182, 255, 0.08);
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  box-shadow: 0 0 0 1px rgba(102, 182, 255, 0.1), 0 0 24px rgba(102, 182, 255, 0.08);
   text-align: center;
+  overflow: hidden;
 }
 
+.scanline, .header-grid { position: absolute; inset: 0; pointer-events: none; }
 .scanline {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  opacity: 0.35;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.018), rgba(255,255,255,0.018) 1px, transparent 1px, transparent 3px);
+  opacity: 0.3;
+}
+.header-grid {
+  border: 1px solid rgba(255,255,255,0.08);
+  margin: 10px;
+  border-radius: 10px;
 }
 
-.eva-kicker {
-  margin: 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.32em;
-  color: var(--muted);
-}
-
+.eva-kicker { margin: 0; font-size: 0.78rem; letter-spacing: 0.26em; color: var(--muted); }
 .eva-title {
   font-family: 'EvaTitle', "Orbitron", sans-serif;
-  font-size: clamp(2.4rem, 8vw, 4.5rem);
-  margin: 0.75rem 0 0.6rem;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  margin: 0.68rem 0 0.45rem;
   letter-spacing: 0.08em;
-  color: #ffffff;
   text-shadow: 0 0 24px rgba(102, 182, 255, 0.5), 0 0 38px rgba(159, 123, 255, 0.35);
 }
-
+.eva-subtitle {
+  margin: 0 auto 0.72rem;
+  color: #c5ccdd;
+  font-size: 0.84rem;
+  letter-spacing: 0.18em;
+}
 .eva-intro {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 740px;
   line-height: 1.75;
   font-size: clamp(0.98rem, 2.2vw, 1.08rem);
   color: var(--muted);
 }
 
 .eva-nav {
-  margin-top: 1.4rem;
+  margin-top: 1.2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.7rem;
+  gap: 0.68rem;
 }
-
 .eva-nav a {
   color: var(--text);
   text-decoration: none;
   border: 1px solid var(--border);
-  padding: 0.45rem 0.85rem;
+  padding: 0.45rem 0.92rem;
   border-radius: 999px;
-  background: rgba(8, 10, 16, 0.85);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  background: rgba(8, 10, 16, 0.9);
+  transition: border-color 0.24s ease, box-shadow 0.24s ease, transform 0.24s ease, background-color 0.24s ease;
 }
-
 .eva-nav a:hover {
   border-color: var(--neon-purple);
-  box-shadow: 0 0 18px rgba(159, 123, 255, 0.28);
+  box-shadow: 0 0 0 1px rgba(159, 123, 255, 0.28), 0 0 18px rgba(159, 123, 255, 0.26);
+  background: rgba(27, 20, 48, 0.62);
   transform: translateY(-2px);
 }
 
 .eva-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  grid-auto-rows: 230px;
-  gap: 18px;
-  max-width: 1100px;
-  margin: 1.1rem auto 1.2rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 176px;
+  gap: 20px;
+  max-width: 1120px;
+  margin: 1.2rem auto 1.3rem;
   padding: 0 1rem;
 }
 
@@ -118,7 +115,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 1.2rem;
   background-image: var(--bg);
   background-size: cover;
   background-position: center;
@@ -127,71 +125,70 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 14px;
   overflow: hidden;
-  text-align: center;
   isolation: isolate;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
   opacity: 0;
   animation: fadeIn 1s ease forwards;
 }
-
 .eva-block::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid transparent;
   border-radius: 14px;
-  background: linear-gradient(120deg, transparent 35%, rgba(102, 182, 255, 0.45), transparent 67%);
-  mix-blend-mode: screen;
+  background: linear-gradient(120deg, transparent 40%, rgba(102, 182, 255, 0.35), transparent 68%);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
-
 .eva-block .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.35));
-  backdrop-filter: blur(1px);
-  transition: backdrop-filter 0.35s ease, background-color 0.35s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.32));
+  backdrop-filter: blur(1.1px);
 }
-
-.eva-block h2,
-.eva-block p { position: relative; z-index: 1; }
-
+.eva-index, .eva-block h2, .eva-note { position: relative; z-index: 1; }
+.eva-index {
+  font-size: 0.74rem;
+  letter-spacing: 0.25em;
+  color: #ced8ef;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 5px;
+  padding: 0.12rem 0.42rem;
+  margin-bottom: 0.55rem;
+}
 .eva-block h2 {
   font-family: 'EvaTitle', "Inter", sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.24rem;
   letter-spacing: 0.06em;
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.36rem;
   text-shadow: 0 0 12px rgba(102, 182, 255, 0.32);
 }
-
-.eva-block p {
+.eva-note {
   margin: 0;
-  font-size: 0.9rem;
-  letter-spacing: 0.16em;
-  color: #d8dbed;
+  font-size: 0.92rem;
+  line-height: 1.58;
+  color: #dde2f1;
 }
 
 .eva-block:hover {
   transform: translateY(-4px);
   border-color: var(--neon-blue);
-  box-shadow: 0 0 0 1px rgba(102, 182, 255, 0.3), 0 0 28px rgba(102, 182, 255, 0.2);
+  box-shadow: 0 0 0 1px rgba(102, 182, 255, 0.28), 0 0 24px rgba(102, 182, 255, 0.2);
 }
-
 .eva-block:hover::before { opacity: 1; }
-.eva-block:hover .overlay { backdrop-filter: blur(2.6px); }
+.books { box-shadow: 0 0 0 1px rgba(159,123,255,.2), 0 6px 20px rgba(0,0,0,.42); }
+.research { box-shadow: 0 0 0 1px rgba(102,182,255,.2), 0 6px 20px rgba(0,0,0,.42); }
+.guestbook { box-shadow: 0 0 0 1px rgba(255,49,88,.16), 0 6px 20px rgba(0,0,0,.42); }
+.is-static { cursor: default; }
 
-.books { box-shadow: 0 0 0 1px rgba(159, 123, 255, 0.24), 0 6px 20px rgba(0,0,0,0.42); }
-.research { box-shadow: 0 0 0 1px rgba(102, 182, 255, 0.24), 0 6px 20px rgba(0,0,0,0.42); }
-.guestbook { box-shadow: 0 0 0 1px rgba(255, 49, 88, 0.22), 0 6px 20px rgba(0,0,0,0.42); }
-
-.travel { grid-column: span 2; }
-.research { grid-row: span 2; }
-.about { grid-column: span 2; }
+.travel { grid-column: 1 / span 6; grid-row: span 1; }
+.books { grid-column: 7 / span 6; grid-row: span 1; }
+.research { grid-column: 1 / span 7; grid-row: span 1; }
+.guestbook { grid-column: 8 / span 5; grid-row: span 1; }
+.about { grid-column: 1 / span 12; grid-row: span 1; }
 
 .eva-footer {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto 1.8rem;
   padding: 1rem;
   border: 1px solid var(--border);
@@ -200,69 +197,41 @@ body {
   text-align: center;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .eva-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 195px; gap: 16px; }
+  .travel,.books,.research,.guestbook,.about { grid-column: auto; grid-row: auto; }
 }
 
 @media (max-width: 768px) {
-  .eva-header { margin: 0.8rem; padding: 2.2rem 1rem 1.4rem; }
-  .eva-kicker { letter-spacing: 0.2em; }
-  .eva-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 205px;
-    margin-top: 0.8rem;
-    padding: 0 0.8rem;
-  }
-  .travel, .research, .about { grid-column: auto; grid-row: auto; }
-  .eva-block h2 { font-size: 1.2rem; }
-  .eva-block p { font-size: 0.86rem; }
+  .eva-header { margin: 0.8rem; padding: 2rem 1rem 1.35rem; }
+  .eva-kicker { letter-spacing: 0.16em; font-size: 0.72rem; }
+  .eva-subtitle { font-size: 0.75rem; letter-spacing: 0.12em; }
+  .eva-nav { gap: 0.54rem; }
+  .eva-nav a { font-size: 0.88rem; padding: 0.4rem 0.75rem; }
+  .eva-grid { grid-template-columns: 1fr; grid-auto-rows: 188px; margin-top: 0.85rem; padding: 0 0.8rem; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+@media (max-width: 430px) {
+  .eva-title { font-size: clamp(2rem, 12vw, 2.7rem); }
+  .eva-intro { font-size: 0.94rem; }
+  .eva-block { padding: 1rem; }
+  .eva-note { font-size: 0.88rem; }
 }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 #eva-startup {
-  position: fixed;
-  inset: 0;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeOutScreen 2s ease 4.5s forwards;
+  position: fixed; inset: 0; background-color: black; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; z-index: 9999; animation: fadeOutScreen 2s ease 4.5s forwards;
 }
-
 .eva-startup-text {
-  color: var(--accent-red);
-  font-family: 'EvaTitle', monospace;
-  font-size: 1.8rem;
-  letter-spacing: 3px;
-  text-shadow: 0 0 15px var(--accent-red), 0 0 30px var(--accent-red);
-  animation: blink 0.6s step-end infinite alternate;
+  color: var(--accent-red); font-family: 'EvaTitle', monospace; font-size: 1.8rem; letter-spacing: 3px;
+  text-shadow: 0 0 15px var(--accent-red), 0 0 30px var(--accent-red); animation: blink 0.6s step-end infinite alternate;
 }
-
-.eva-startup-line {
-  width: 80%;
-  height: 2px;
-  background-color: var(--accent-red);
-  margin-top: 30px;
-  opacity: 0;
-  animation: lineExpand 2s ease 1s forwards;
-}
-
-.eva-online {
-  color: #6bf8ff;
-  font-family: 'EvaTitle', monospace;
-  font-size: 1.4rem;
-  margin-top: 40px;
-  opacity: 0;
-  text-shadow: 0 0 15px #6bf8ff, 0 0 25px #6bf8ff;
-  animation: onlineFlash 0.8s ease 3.3s forwards;
-}
-
+.eva-startup-line { width: 80%; height: 2px; background-color: var(--accent-red); margin-top: 30px; opacity: 0; animation: lineExpand 2s ease 1s forwards; }
+.eva-online { color: #6bf8ff; font-family: 'EvaTitle', monospace; font-size: 1.4rem; margin-top: 40px; opacity: 0; text-shadow: 0 0 15px #6bf8ff, 0 0 25px #6bf8ff; animation: onlineFlash 0.8s ease 3.3s forwards; }
 @keyframes blink { 0% { opacity: 1; } 100% { opacity: 0.2; } }
 @keyframes lineExpand { from { width: 0; opacity: 1; } to { width: 80%; opacity: 1; } }
 @keyframes onlineFlash { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
