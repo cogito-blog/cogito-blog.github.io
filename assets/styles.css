@@ -317,4 +317,11 @@ pre { overflow-x: auto; background: #070b14; padding: 0.8rem; border-radius: 8px
   margin-top: 0.6rem;
   font-size: 0.9rem;
   color: rgba(230, 238, 255, 0.72);
+}.last-updated {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 40px;
+  padding-right: 12px;
+  font-style: italic;
 }
