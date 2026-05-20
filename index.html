@@ -9,62 +9,69 @@
 </head>
 
 <body>
-
-<!-- ✅ EVA 启动动画层 -->
 <div id="eva-startup">
   <div class="eva-startup-text">Absolute Terror Field...</div>
   <div class="eva-startup-line"></div>
   <div class="eva-online">Gargantua</div>
 </div>
 
-  <!-- ✅ 主页面内容 -->
-  <header class="eva-header">
-    <h1 class="eva-title">Gargantua</h1>
-  </header>
+<header class="eva-header">
+  <div class="scanline"></div>
+  <div class="header-grid"></div>
+  <p class="eva-kicker">COGITO · PERSONAL NODE // 03</p>
+  <h1 class="eva-title">Gargantua</h1>
+  <p class="eva-subtitle">PERSONAL PORTAL / TRAVEL · BOOKS & FILMS · RESEARCH · GUESTBOOK · ABOUT</p>
+  <p class="eva-intro">在黑白高对比的静默背景中记录阅读、电影、旅行与研究，以低饱和霓虹点缀思考轨迹。</p>
+  <nav class="eva-nav" aria-label="首页快速导航">
+    <a href="travel.html">Travel</a>
+    <a href="books.html">Books & Films</a>
+    <a href="research.html">Research</a>
+    <a href="guestbook.html">Guestbook</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
 
-  <main class="eva-grid">
-    <a href="travel.html" class="eva-block travel" style="--bg:url('assets/images/bg1.jpg')">
-      <div class="overlay"></div>
-      <h2>TRAVEL LOG</h2>
-      <p>埃德蒙斯</p>
-    </a>
+<main class="eva-grid">
+  <a href="travel.html" class="eva-block travel" style="--bg:url('assets/images/bg1.jpg')">
+    <div class="overlay"></div>
+    <span class="eva-index">01</span>
+    <h2>TRAVEL</h2>
+    <p class="eva-note">记录城市、风景与短途逃逸</p>
+  </a>
 
-    <a href="books.html" class="eva-block books" style="--bg:url('assets/images/books.jpg')">
-      <div class="overlay"></div>
-      <h2>BOOKS & FILMS</h2>
-      <p>米勒</p>
-    </a>
+  <a href="books.html" class="eva-block books" style="--bg:url('assets/images/eva-bg1.png')">
+    <div class="overlay"></div>
+    <span class="eva-index">02</span>
+    <h2>BOOKS & FILMS</h2>
+    <p class="eva-note">书影、片段与私人注释</p>
+  </a>
 
-    <a href="research.html" class="eva-block research" style="--bg:url('assets/images/eva-bg1.png')">
-      <div class="overlay"></div>
-      <h2>RESEARCH NOTES</h2>
-      <p>曼恩</p>
-    </a>
+  <a href="research.html" class="eva-block research" style="--bg:url('assets/images/eva-bg1.png')">
+    <div class="overlay"></div>
+    <span class="eva-index">03</span>
+    <h2>RESEARCH</h2>
+    <p class="eva-note">材料、显微结构与科研札记</p>
+  </a>
 
-    <a href="guestbook.html" class="eva-block guestbook" style="--bg:url('assets/images/guestbook.jpg')">
-      <div class="overlay"></div>
-      <h2>MESSAGE BOARD</h2>
-      <p>Stay</p>
-    </a>
+  <a href="guestbook.html" class="eva-block guestbook" style="--bg:url('assets/images/bg1.jpg')">
+    <div class="overlay"></div>
+    <span class="eva-index">04</span>
+    <h2>GUESTBOOK</h2>
+    <p class="eva-note">留下碎片、问候或回声</p>
+  </a>
 
-    <a href="about.html" class="eva-block about" style="--bg:url('assets/images/about.jpg')">
-      <div class="overlay"></div>
-      <h2>ABOUT ZOE</h2>
-      <p>个 人 简 介</p>
-    </a>
-  </main>
+  <a href="about.html" class="eva-block about" style="--bg:url('assets/images/eva-bg1.png')">
+    <div class="overlay"></div>
+    <span class="eva-index">05</span>
+    <h2>ABOUT</h2>
+    <p class="eva-note">关于我、研究与生活侧影</p>
+  </a>
+</main>
 
-  <footer class="eva-footer">
-    <p>© 2025 Cogito</p>
-  </footer>
+<footer class="eva-footer">
+  <p>© <span id="year"></span> Cogito</p>
+</footer>
 
-  <!-- ✅ 启动动画控制脚本 -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(() => {
-        document.getElementById("eva-startup").style.display = "none";
-      }, 4000); // 4秒后彻底隐藏启动层
-    });
-  </script>
+<script src="assets/script.js"></script>
 </body>
 </html>
