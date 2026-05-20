@@ -3,47 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>埃德蒙斯 — Cogito</title>
+  <title>Travel — Cogito</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body class="inner-page">
   <header class="site-header">
     <div class="container">
-      <h1 class="site-title"><a href="index.html">Cogito</a></h1>
+      <h1 class="site-title"><a href="index.html?skipIntro=1">Gargantua</a></h1>
       <nav class="main-nav">
-        <a href="index.html">卡冈图亚</a>
-        <a href="travel.html">埃德蒙斯</a>
-        <a href="books.html">米勒</a>
-        <a href="research.html">曼恩</a>
-        <a href="guestbook.html">Stay</a>
+        <a href="travel.html">Travel</a>
+        <a href="books.html">Books & Films</a>
+        <a href="research.html">Research</a>
+        <a href="guestbook.html">Guestbook</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h2>曼恩</h2>
+  <main class="container reading-shell">
+    <h2>Travel</h2>
+    <p class="lead">记录城市、风景与短途逃逸。</p>
     <article id="post-beijing" class="post">
       <h3>北京 3 日游</h3>
-      <p class="meta">2024-12-01 · 旅行笔记 · <em>景点、花费、路线</em></p>
-      <p>第一天：天安门、故宫……（这里写你的旅行内容）</p>
-      <p>第二天：长城、怀柔……</p>
-      <!-- 可插入相册（简单图片网格） -->
+      <p class="meta">2024-12-01 · 旅行笔记 · 景点、花费、路线</p>
+      <p>第一天：天安门、故宫，沿中轴线慢慢走，晚上在胡同里吃饭，记录城市的尺度与节奏。</p>
+      <p>第二天：长城、怀柔，白天看山体层次，夜里整理照片与备忘。</p>
       <div class="photo-grid">
-        <img src="https://via.placeholder.com/300x200" alt="photo">
-        <img src="https://via.placeholder.com/300x200" alt="photo">
+        <img src="https://via.placeholder.com/300x200" alt="travel photo placeholder">
+        <img src="https://via.placeholder.com/300x200" alt="travel photo placeholder">
       </div>
     </article>
-
-    <!-- 新的游记贴在这里 -->
+    <p><a class="back-home" href="index.html?skipIntro=1">← 返回首页</a></p>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year-2"></span> 你的名字</p>
-    </div>
-  </footer>
-
+  <footer class="site-footer"><div class="container"><p>© <span id="year-2"></span> Cogito</p></div></footer>
   <script src="assets/script.js"></script>
 </body>
 </html>
-

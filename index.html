@@ -18,15 +18,16 @@
 <header class="eva-header">
   <div class="scanline"></div>
   <div class="header-grid"></div>
-  <p class="eva-kicker">COGITO · PERSONAL NODE // 02</p>
+  <p class="eva-kicker">COGITO · PERSONAL NODE // 03</p>
   <h1 class="eva-title">Gargantua</h1>
-  <p class="eva-subtitle">PERSONAL PORTAL / NOTES · TRAVEL · RESEARCH</p>
+  <p class="eva-subtitle">PERSONAL PORTAL / TRAVEL · BOOKS & FILMS · RESEARCH · GUESTBOOK · ABOUT</p>
   <p class="eva-intro">在黑白高对比的静默背景中记录阅读、电影、旅行与研究，以低饱和霓虹点缀思考轨迹。</p>
   <nav class="eva-nav" aria-label="首页快速导航">
-    <a href="books.html">Books / Movie</a>
     <a href="travel.html">Travel</a>
+    <a href="books.html">Books & Films</a>
     <a href="research.html">Research</a>
     <a href="guestbook.html">Guestbook</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
@@ -34,7 +35,7 @@
   <a href="travel.html" class="eva-block travel" style="--bg:url('assets/images/bg1.jpg')">
     <div class="overlay"></div>
     <span class="eva-index">01</span>
-    <h2>TRAVEL LOG</h2>
+    <h2>TRAVEL</h2>
     <p class="eva-note">记录城市、风景与短途逃逸</p>
   </a>
 
@@ -48,23 +49,23 @@
   <a href="research.html" class="eva-block research" style="--bg:url('assets/images/eva-bg1.png')">
     <div class="overlay"></div>
     <span class="eva-index">03</span>
-    <h2>RESEARCH NOTES</h2>
+    <h2>RESEARCH</h2>
     <p class="eva-note">材料、显微结构与科研札记</p>
   </a>
 
   <a href="guestbook.html" class="eva-block guestbook" style="--bg:url('assets/images/bg1.jpg')">
     <div class="overlay"></div>
     <span class="eva-index">04</span>
-    <h2>MESSAGE BOARD</h2>
+    <h2>GUESTBOOK</h2>
     <p class="eva-note">留下碎片、问候或回声</p>
   </a>
 
-  <article class="eva-block about is-static" style="--bg:url('assets/images/eva-bg1.png')" aria-label="ABOUT ZOE（页面建设中）">
+  <a href="about.html" class="eva-block about" style="--bg:url('assets/images/eva-bg1.png')">
     <div class="overlay"></div>
     <span class="eva-index">05</span>
-    <h2>ABOUT ZOE</h2>
+    <h2>ABOUT</h2>
     <p class="eva-note">关于我、研究与生活侧影</p>
-  </article>
+  </a>
 </main>
 
 <footer class="eva-footer">
@@ -72,12 +73,5 @@
 </footer>
 
 <script src="assets/script.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-      document.getElementById("eva-startup").style.display = "none";
-    }, 4000);
-  });
-</script>
 </body>
 </html>
