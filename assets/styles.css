@@ -324,4 +324,12 @@ pre { overflow-x: auto; background: #070b14; padding: 0.8rem; border-radius: 8px
   margin-top: 40px;
   padding-right: 12px;
   font-style: italic;
+}body.home-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      rgba(3, 6, 12, 0.35),
+      rgba(3, 6, 12, 0.78)
+    ),
+    url("images/bg1.jpg") center center / cover fixed no-repeat;
 }
