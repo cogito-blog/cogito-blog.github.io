@@ -298,3 +298,23 @@ pre { overflow-x: auto; background: #070b14; padding: 0.8rem; border-radius: 8px
   .reading-shell { width: calc(100% - 1rem); }
   .main-nav a { font-size: 0.86rem; }
 }
+.about-photo {
+  margin: 1.5rem auto;
+  max-width: 360px;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid rgba(120, 170, 255, 0.35);
+  box-shadow: 0 0 24px rgba(80, 150, 255, 0.18);
+}
+
+.about-photo figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: rgba(230, 238, 255, 0.72);
+}
